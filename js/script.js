@@ -6,6 +6,29 @@ Professor: Abimael de Oliveira
 Data de entrega: 07/06 */
 
 
+// botão de voltar ao topo
+const btnTopo = document.querySelector('#btnTopo');
+
+if (btnTopo) {
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+            btnTopo.classList.add('mostrar');
+        } else {
+            btnTopo.classList.remove('mostrar');
+        }
+    });
+
+    btnTopo.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+}
+
+
 function filtrar(categoria) {
     const itens = document.querySelectorAll('.item');
 
