@@ -1,7 +1,311 @@
 /* AF - Avaliação Final - Linguagens de Programação
-Tema do Projeto: Nome do tema escolhido
-Aluno 1: Nome completo - RA: XXXXX
-Aluno 2: Nome completo - RA: XXXXX
+Tema do Projeto: Lançamentos de filmes e séries
+Aluno 1: Sabrina Alves Andrade Pereira - RA: 251336
+Aluno 2: Raquel Helena Caetano Pinheiro - RA: 252414
 Professor: Abimael de Oliveira
-Data de entrega: 07/06 */
+Data de entrega: 07/06/2026
+:root {
+    --cor-primaria: #e50914;
+    --cor-secundaria: #111111;
+    --cor-destaque: #ffc107;
+    --cor-clara: #f8f9fa;
+    --cor-texto: #222;
+    --sombra: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-clara);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    padding-top: 70px;
+}
+
+/* Imagens */
+img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: var(--sombra);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--cor-destaque) !important;
+}
+
+.nav-link {
+    transition: 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--cor-destaque) !important;
+}
+
+/* Carrossel */
+.carousel-item img {
+    height: 520px;
+    object-fit: cover;
+    filter: brightness(60%);
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.carousel-caption h2,
+.carousel-caption h5 {
+    color: var(--cor-destaque);
+    font-weight: bold;
+}
+
+/* Seções */
+section {
+    padding: 60px 0;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: bold;
+}
+
+.titulo-gradiente {
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-destaque));
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card img {
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.06);
+}
+
+.card-title {
+    color: var(--cor-primaria);
+}
+
+/* Botões */
+.btn-primary,
+.btn-danger {
+    background: linear-gradient(135deg, var(--cor-primaria), #8b0000);
+    border: none;
+}
+
+.btn-primary:hover,
+.btn-danger:hover {
+    filter: brightness(1.1);
+    transform: scale(1.03);
+}
+
+.btn {
+    transition: 0.3s ease;
+}
+
+/* Galeria */
+.galeria,
+.novidades,
+.lancamentos {
+    padding-top: 40px;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+/* Contato */
+.form-contato {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: var(--sombra);
+}
+
+.form-control,
+.form-select {
+    border-radius: 10px;
+}
+
+iframe {
+    border-radius: 14px;
+    box-shadow: var(--sombra);
+}
+
+/* Área de informações usando Flexbox */
+.area-info,
+.area-destaques {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Rodapé */
+.rodape,
+footer {
+    background-color: var(--cor-secundaria);
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+    margin-top: 40px;
+}
+
+.rodape a,
+footer a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+}
+
+.rodape a:hover,
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Botão voltar ao topo */
+.btn-topo,
+#btnTopo {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: none;
+    padding: 12px 16px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: var(--sombra);
+    z-index: 999;
+}
+
+.btn-topo.mostrar,
+#btnTopo.mostrar {
+    display: block;
+}
+
+/* Efeito JS nos cards */
+.card-destaque-js {
+    transform: scale(1.03);
+}
+
+/* Tema escuro, caso exista botão no JS */
+.tema-escuro {
+    background-color: #111;
+    color: #f5f5f5;
+}
+
+.tema-escuro .card,
+.tema-escuro .form-contato {
+    background-color: #1f1f1f;
+    color: #dadbdf;
+}
+
+/* Animação */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animado,
+.card,
+section {
+    animation: aparecer 0.8s ease;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding-top: 65px;
+    }
+
+    .carousel-item img {
+        height: 330px;
+    }
+
+    .carousel-caption {
+        padding: 12px;
+    }
+
+    .carousel-caption h2,
+    .carousel-caption h5 {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    .card img {
+        height: 200px;
+    }
+
+    .form-contato {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item img {
+        height: 260px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
 
