@@ -1,9 +1,9 @@
 /* AF - Avaliação Final - Linguagens de Programação
-Tema do Projeto: Nome do tema escolhido
-Aluno 1: Nome completo - RA: XXXXX
-Aluno 2: Nome completo - RA: XXXXX
+Tema do Projeto: Lançamentos de filmes e séries
+Aluno 1: Sabrina Alves Andrade Pereira - RA: 251336
+Aluno 2: Raquel Helena Caetano Pinheiro - RA: 252414
 Professor: Abimael de Oliveira
-Data de entrega: 07/06 */
+Data de entrega: 07/06 */2026
 
 
 // botão de voltar ao topo
